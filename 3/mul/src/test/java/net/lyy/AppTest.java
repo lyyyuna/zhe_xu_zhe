@@ -15,6 +15,8 @@ public class AppTest
     @Test
     public void shouldAnswerWithTrue()
     {
+        int[] a = {2,3,5,4,3,2,6,7};
+        
         assertTrue( false );
     }
 }
