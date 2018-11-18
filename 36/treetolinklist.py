@@ -44,3 +44,19 @@ head = convert(root)
 while head:
     print head.value,
     head = head.right_child
+
+
+def dfs(pCur, pLast):
+    if pCur.left_child:
+        pLast = dfs(pCur.left_child, pLast)
+
+    if pLast:
+        pLast.right_child = pCur
+        pCur.left_child = pLast
+
+    pLast = pCur
+
+    if pCur.right_child:
+        pLast = dfs(pCur.right_child, pLast)
+
+    return pLast
