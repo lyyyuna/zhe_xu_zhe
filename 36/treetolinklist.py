@@ -11,7 +11,7 @@ def convert(pRoot):
     while plast and plast.left_child:
         plast = plast.left_child
     return plast
-    
+
 
 def convertdfs(pCur, pLast):
     if pCur is None:
@@ -29,3 +29,18 @@ def convertdfs(pCur, pLast):
         pLast = convertdfs(pCur.right_child, pLast)
 
     return pLast
+
+
+node7 = TreeNode(16)
+node6 = TreeNode(12)
+node5 = TreeNode(8)
+node4 = TreeNode(4)
+node3 = TreeNode(14, left_child=node6, right_child=node7)
+node2 = TreeNode(6, left_child=node4, right_child=node5)
+node1 = TreeNode(10, left_child=node2, right_child=node3)
+root = node1
+
+head = convert(root)
+while head:
+    print head.value,
+    head = head.right_child
