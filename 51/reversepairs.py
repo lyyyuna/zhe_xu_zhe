@@ -34,8 +34,13 @@ def merge(arr, arrcp, start, end):
     while j >= start+length+1:
         arrcp[indexcp] = arr[j]
         j -= 1
-        indexcp -=1 
+        indexcp -= 1 
+
+    # copy from arrcp to overwrite original array
+    for i in range(start, end+1):
+        arr[i] = arrcp[i]
 
     return cnt + left + right
+
 
 print getreversepaircnt([7, 5, 6, 4])
