@@ -24,4 +24,18 @@ def getugly(index):
     return uglyarr[-1]
 
 
+def isUgly(num):
+    while num%2==0:
+        num /= 2
+    while num%3==0:
+        num /= 3
+    while num%5==0:
+        num /= 5
+    if num == 1:
+        return True
+    else:
+        return False
+
+
 print getugly(1500)
+print isUgly(getugly(1500))
