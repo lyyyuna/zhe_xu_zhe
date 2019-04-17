@@ -36,6 +36,31 @@ void delete_node(Node * phead, Node * pdel)
 
 }
 
+void delete_node(Node ** phead, int val)
+{
+    Node * pnode = *phead;
+    Node * pprev = nullptr;
+
+    // if head node is node to be deleted
+    if (pnode != nullptr && pnode->val == val)
+    {
+        *phead = pnode->pnext;
+        delete pnode;
+    }
+
+    while (pnode->val != val && pnode != nullptr)
+    {
+        pprev = pnode;
+        pnode = pnode->pnext;
+    }
+
+    pprev->pnext = pnode->pnext;
+    delete pprev;
+
+
+    
+}
+
 int main()
 {
     
